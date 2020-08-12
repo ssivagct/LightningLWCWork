@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title='Account form'>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input label='Enter Name' data-fieldname='accName' type='text' value={accObject.Name}
+                    onchange={valueChangeHandler}>
+                </lightning-input>
+
+                <lightning-input label='Enter Acc Number' type='number' data-fieldname='AccountNumber'
+                    value={accObject.AccountNumber} onchange={valueChangeHandler}>
+                </lightning-input>
+
+                <lightning-input label='Enter Phone' type='phone' data-fieldname='Phone' value={accObject.Phone}
+                    onchange={valueChangeHandler}>
+                </lightning-input>
+
+                <lightning-input label='Enter Site' type='url' data-fieldname='Website' value={accObject.Website}
+                    onchange={valueChangeHandler}>
+                </lightning-input>
+
+
+            </lightning-layout-item>
+
+            <lightning-layout-item>
+                <lightning-button label='submit' onclick={formSubmitHandler}>
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+</template>

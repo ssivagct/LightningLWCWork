@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Create a New Case">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input name='Subject' label='Account NAme' onchange={handleSubject}>
+                    </lightning-input>
+                    <lightning-input name='Case Orgin' label='Enter Case Orgin' onchange={handleCaseorgin}>
+                    </lightning-input> 
+                    <lightning-button label="Save" onclick={saveHandler}>
+                        </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

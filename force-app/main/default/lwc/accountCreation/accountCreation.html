@@ -1,0 +1,45 @@
+<template>
+
+    <template if:true={saveDraftSubmit}>
+        <lightning-spinner alternative-text="Loading" class="fixed"></lightning-spinner>
+    </template>
+    <div class="slds-text-heading_large" >
+        <div class="slds-text-align_center">
+            Application Form
+        </div>
+    </div>
+
+    <lightning-card title="Account Details">
+        <lightning-layout >
+            <lightning-layout-item>
+                <lightning-input name='acctname' label='Enter Name:' placeholder="Eg. TOYOTA" required onchange={handleFormInputChange}>
+                    </lightning-input>
+                <lightning-input name='accNumber' label='Enter Number:' onchange={handleFormInputChange}>
+                    </lightning-input>   
+                    <lightning-input name='accFax' type='fax' label='Enter Fax :' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-helptext content="Please provide website details in URL format"></lightning-helptext>
+                    <lightning-input name='accWebsite' type='url' label='Enter Website URL:' onchange={handleFormInputChange}>
+                        
+                    </lightning-input>
+                    <lightning-helptext content="number of working staff"></lightning-helptext>
+                    <lightning-input name='accEmployees' type='number' label='No. Employees:' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-combobox
+               name="ratingPicklist"
+               label="Rating"
+               value={ratingValue}
+               placeholder="Select Progress"
+               options={ratingOptions}
+               onchange={handleChangePicklist} >
+   </lightning-combobox>
+                    <lightning-button label='Submit' onclick={handleFormSubmit}>
+                        </lightning-button>
+
+                        
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    
+</template>

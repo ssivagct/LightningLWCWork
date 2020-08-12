@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Account Name Info">
+        <lightning-layout>
+            <lightning-layout-item>
+               
+                <lightning-button label='Submit' onclick={saveHandler}>
+                    </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+        <template if:true={isaccexists}>
+            <div>Name:</div> 
+            <div>{accName}</div>
+         </template>
+         <lightning-card title="Create New Account">
+             <lightning-layout>
+                 <lightning-layout-item>
+                     <lightning-input name="accname" label="Acocunt Name:" onchange={accountNamehandler}>                         
+                     </lightning-input>
+                     <lightning-button label="create a new account" onclick={accSavehandler}>
+                         </lightning-button>
+                 </lightning-layout-item>
+             </lightning-layout>
+         </lightning-card>
+   
+</template>

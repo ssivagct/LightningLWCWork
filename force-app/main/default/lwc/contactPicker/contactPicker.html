@@ -1,0 +1,16 @@
+<template>
+    
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item padding="horizontal-small">
+            <lightning-combobox
+                name="conlist"
+                label="Related Contacts"
+                value={selectedValue}
+                placeholder="Select any related contact"
+                options={contactOptions} 
+                onchange={conChangeHandler} variant="label-hidden">
+            </lightning-combobox>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</template>

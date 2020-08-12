@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Calculator">
+        <h3>
+            This Calculator was developed by Siva
+        </h3>
+        <div>
+            Refer the following numbers:
+        </div>
+    
+    </lightning-card>
+    
+    <lightning-input type="checkbox" label="Show Values" onchange={enableBox}>
+        </lightning-input>
+    <div if:true={checkboxFlag} >
+    
+    <template for:each={operators} for:item="operator">
+        <p key={operator.id}>{operator}</p>
+    </template> 
+    </div>
+</template>

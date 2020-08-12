@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title={calcTitle} onclick={showMessage}>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input name='fname' label={firstNumberLabel} onchange={onchangeNameHandler}>
+                    </lightning-input>
+                    <lightning-input name='lname' label={lastNumberLabel} onchange={onchangeNameHandler}>
+                    </lightning-input>
+                    <lightning-button-group>
+                        <lightning-button name='sum' label={sumButtonLabel} onclick={buttonClickHandler}>
+                            </lightning-button>
+                            <lightning-button name='sub' label={subtractButtonLabel} onclick={buttonClickHandler}>
+                            </lightning-button>
+                    </lightning-button-group>
+                    <div> The Result is: {resultValue}</div>
+                    <br>
+                    <div><div> Hint: {hintMessage}</div></div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    
+</template>

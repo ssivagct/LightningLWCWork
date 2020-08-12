@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="My Family">
+        <div>
+            My family members
+        </div>
+    </lightning-card>
+    <lightning-input type="checkbox" label="All" onchange={displayAllmemebers}>
+    </lightning-input>
+    <lightning-input type="checkbox" label="Kids" onchange={displayAllkids}>
+    </lightning-input>
+    <lightning-input type="checkbox" label="Adults" onchange={displayAlladults}>
+    </lightning-input>
+
+
+        <template if:true={allMembersflag} for:each={allMembers} for:item="eachMember">
+            <p key={eachMember.id}>{eachMember.age}</p>
+
+        </template>
+   
+  
+ 
+        <template if:true={allKidsflag} iterator:it={allKids}>
+            <p key={it.value}>{it.value}</p>
+
+        </template>  
+        <template if:true={allAdultsflag} for:each={allAdults} for:item="eachAdult">
+            <p key={eachAdult.id}>{eachAdult}</p>
+
+        </template>    
+ 
+
+</template>

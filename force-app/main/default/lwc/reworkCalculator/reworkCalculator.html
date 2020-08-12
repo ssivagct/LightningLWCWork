@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Calculator">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input type='number' name='fnumber' label='Enter 1st Number:' onchange={numberValueHandler}>
+                    </lightning-input>
+                    <lightning-input type='number' name='lnumber' label='Enter 2nd Number:' onchange={numberValueHandler}>
+                    </lightning-input>
+                    <lightning-button-group>
+                    <lightning-button label='ADD' onclick={addHandler}>
+                        </lightning-button>
+                        <lightning-button label='SUB' onclick={subHandler}>
+                        </lightning-button>
+                        <lightning-button label='MUL' onclick={mulHandler}>
+                        </lightning-button>
+                        <lightning-button label='DIV' onclick={divHandler}>
+                        </lightning-button>
+                </lightning-button-group>
+                <lightning-input type='checkbox' name='show' label='Show previous results' onchange={checkboxValueHandler}>
+                </lightning-input>
+
+                <template if:true={showPrevious} for:each={previousResult} for:item="res">
+                    <li key={res}>Result: {previousResult}</li>
+                    </template>
+           
+                
+            </lightning-layout-item>
+            <lightning-layout-item>
+                Result is : {resultNumber}
+            </lightning-layout-item>
+        </lightning-layout>
+        </lightning-card>
+</template>

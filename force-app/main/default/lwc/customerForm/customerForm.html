@@ -1,0 +1,95 @@
+<template>
+    <template if:true={formSubmit}>
+        <lightning-spinner alternative-text="Loading" class="fixed"></lightning-spinner>
+    </template>
+
+    <div class="slds-text-heading_large" >
+        <div class="slds-text-align_center">
+            Application Form
+        </div>
+    </div>
+
+    <lightning-card title='Company Info' class='section-title'>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input name='acctname' label='Company Name' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-input name='accNumber' type='number' label='Regration Number' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-combobox
+               name="ratingPicklist"
+               label="Account Rating (Demand)"
+               value={accountRating}
+               placeholder="Select Demand"
+               options={ratingOptions}
+               onchange={handleChangePicklist} >
+   </lightning-combobox>
+                    <lightning-input name='accFax' type='fax' label='Fax#' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-input name='accWebsite' type='url' label='Website' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-input name='accEmployees' type='number' label='No. of employees' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+
+    <lightning-card title='Customer Info' class='section-title'>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input name='conFname' label='First Name (Person)' value='Develpor' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-input name='conLname'  label='Surname (Person)' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-input name='conMobile' type='mobile' label='Mobile#' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-input name='conEmail' type='email' label='Email address' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    
+
+    <lightning-card title='Case Info' class='section-title'>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input name='caseSub' label='Whats the issue?' class='button-title' onchange={handleFormInputChange}>
+                    </lightning-input>
+                    <lightning-combobox
+               name="statusPicklist"
+               label="Problem status"
+               value={caseStatus}
+               placeholder="Select status"
+               options={statusOptions}
+               onchange={handleChangePicklist} >
+   </lightning-combobox>
+   <lightning-combobox
+   name="priorityPicklist"
+   label="Issue priority"
+   value={casePriority}
+   placeholder="Select Priority"
+   options={priorityOptions}
+   onchange={handleChangePicklist} >
+</lightning-combobox>
+
+  <lightning-combobox
+ name="originPicklist"
+ label="Problem source"
+ value={caseOrigin}
+ placeholder="Select Origin"
+ options={originOptions}
+ onchange={handleChangePicklist} >
+  </lightning-combobox>
+
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    <lightning-button label='Submit' onclick={submitFormHandler}>
+        </lightning-button>
+
+        <lightning-button label='Check DOM' onclick={checkDom}>
+        </lightning-button>
+
+</template>

@@ -1,0 +1,16 @@
+<template>
+    
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item padding="horizontal-small">
+            <lightning-combobox
+                name="citylist"
+                label="Related Cities"
+                value={selectedValue}
+                placeholder="Select any related City"
+                options={cityOptions} 
+                onchange={cityChangeHandler} variant="label-hidden">
+            </lightning-combobox>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</template>

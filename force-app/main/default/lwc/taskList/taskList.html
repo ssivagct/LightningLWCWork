@@ -1,0 +1,74 @@
+<template>
+    <lightning-card title="Task List">
+        <lightning-button slot='actions' icon-name="utility:sync" onclick={getTasks}></lightning-button>
+
+        <lightning-layout>
+            <lightning-layout-item padding='around-small' size=12>
+                <ul class="slds-has-dividers_around-space">
+                    <template for:each={taskList} for:item='task'>
+
+                   
+                    <li class="slds-item" key={task.Id}>
+                        <lightning-layout vertical-align='center' horizontal-align='spread'>
+                            <lightning-layout-item padding='around-small' flexibility='grow'>
+                                {task.Subject}
+                            </lightning-layout-item>
+                            <lightning-layout-item padding='around-small'>
+                                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
+                                    class="slds-m-left_xx-small" title="Delete" name={task.Id} onclick={deleteTaskHandler}></lightning-button-icon>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </li>
+                </template>
+
+            <!--       <li class="slds-item">
+                        <lightning-layout vertical-align='center' horizontal-align='spread'>
+                            <lightning-layout-item padding='around-small' flexibility='grow'>
+                                Task 2
+                            </lightning-layout-item>
+                            <lightning-layout-item padding='around-small'>
+                                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
+                                    class="slds-m-left_xx-small" title="Delete"></lightning-button-icon>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </li>
+
+
+                    <li class="slds-item">
+
+                        <lightning-layout vertical-align='center' horizontal-align='spread'>
+                            <lightning-layout-item padding='around-small' flexibility='grow'>
+                                Task 3
+                            </lightning-layout-item>
+                            <lightning-layout-item padding='around-small'>
+                                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
+                                    class="slds-m-left_xx-small" title="Delete"></lightning-button-icon>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </li>  --> 
+                </ul>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <p slot="footer">
+            <lightning-layout vertical-align='center' horizontal-align='spread' pull-to-boundary='small'>
+                <lightning-layout-item padding='around-small' flexibility='grow'>
+                    <lightning-input type="text" value={newTask} label="Enter some text" variant='label-hidden'
+                        placeholder="type here..." onchange={getTaskName}></lightning-input>
+
+                </lightning-layout-item>
+
+                <lightning-layout-item padding='around-small'>
+                    <lightning-button label='Add' variant="brand" onclick={addTaskHandler}>
+                    </lightning-button>
+
+                </lightning-layout-item>
+
+            </lightning-layout>
+
+        </p>
+
+
+
+    </lightning-card>
+</template>

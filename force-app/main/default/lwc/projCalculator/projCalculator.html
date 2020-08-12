@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Lightning Calculator" icon-name="custon:custom1">
+        <lightning-layout multiple-rows>
+<lightning-layout-item padding="around-medium">
+    <lightning-input type="number" name="firstNumber" label="Enter 1st #" onchange={getFirstnumber}>
+        </lightning-input>
+        <lightning-input type="number" name="second number" label="Enter 2nd #" onchange={getSecondnumber}>
+        </lightning-input>
+        <lightning-button-group>
+            <lightning-button label="ADD" icon-name="utility:add" onclick={addResult}>
+            </lightning-button>
+            <lightning-button label="SUB" icon-name="utility:dash" onclick={subResult}>
+            </lightning-button>
+            <lightning-button label="MUL" icon-name="utility:add" onclick={mulResult}>
+            </lightning-button>
+            <lightning-button label="DIV" icon-name="utility:add" onclick={divResult}>
+            </lightning-button>
+        </lightning-button-group>
+        <lightning-layout-item>
+            <lightning-formatted-text value={finalNumber}>
+                
+            </lightning-formatted-text>
+        </lightning-layout-item>
+</lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

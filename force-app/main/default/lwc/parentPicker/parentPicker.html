@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title='Search Customer Info' class='title-class'>
+
+        <c-account-picker onaccountchange={accountChange}>></c-account-picker>
+        <c-contact-picker account-id={accId} oncontactchange={contactChange}>
+
+        </c-contact-picker>
+        <c-cities-picker con-id={conId}></c-cities-picker>
+  
+        <div>First <slot name="task1">Task 1</slot></div>
+        <div>Second <slot name="task2">Task 2</slot></div>
+
+    <lightning-layout horizontal-align="center" class='light-layout'>
+        <lightning-layout-item padding="horizontal-small">
+            <lightning-button label='Show Detail' onclick={showDetail} class='light-button-show'>
+
+            </lightning-button>
+
+            <lightning-button label='Show DOM' onclick={showDom} class='light-button'>
+
+            </lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</lightning-card>
+
+</template>

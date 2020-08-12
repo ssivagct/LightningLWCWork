@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title='Name Search'>
+        <lightning-layout>
+            <lightning-layout-item>
+
+            <lightning-input label='Enter ID:' onchange={getName}>
+                </lightning-input>
+                <lightning-button label='Search' onclick={displayName}>
+
+                </lightning-button>
+                <div> Input: {keyWord}</div>
+            </lightning-layout-item>
+         
+        </lightning-layout>
+        <lightning-layout>
+        <template for:each={Name} for:item="nm">
+            <p key={nm.id}>
+                <tr>
+                    <th>ID: {nm.id}</th>
+                    <th>Name: {nm.name}</th>
+                    <th>Age: {nm.age}</th>
+                  </tr>
+            </p>>
+                         </template>
+                        </lightning-layout>
+    </lightning-card>
+
+</template>

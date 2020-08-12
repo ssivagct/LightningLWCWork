@@ -1,0 +1,16 @@
+<template>
+
+  <lightning-layout multiple-rows horizontal-align="center">
+    <template if:true={carsFound}>
+      <template for:each={carsList} for:item="car">
+        <lightning-layout-item key={car.id} padding="around-small" size="12" small-device-size="6" large-device-size="6"
+          medium-device-size="6">
+
+          <c-car-tile car={car} onselectedcar={selectCar} selected-car-id={selectCarId}></c-car-tile>
+
+        </lightning-layout-item>
+      </template>
+    </template>
+
+  </lightning-layout>
+</template>

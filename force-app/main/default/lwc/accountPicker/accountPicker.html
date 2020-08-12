@@ -1,0 +1,16 @@
+<template>
+
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item padding="horizontal-small">
+            <lightning-combobox
+                name="acclist"
+                label="Accounts List"
+                value={selectedValue}
+                placeholder="Select any account"
+                options={accountOptions} 
+                onchange={accChangeHandler} variant="label-hidden">
+            </lightning-combobox>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</template>

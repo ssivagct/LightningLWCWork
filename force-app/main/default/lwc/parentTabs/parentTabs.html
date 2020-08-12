@@ -1,0 +1,25 @@
+<template>
+    <lightning-tabset>
+        <lightning-tab label="Account Records" onclick={tabaccHandler}>
+            
+        </lightning-tab>
+        <lightning-tab label="Second Tab"  onclick={tableHandler}>
+           
+        </lightning-tab>
+        <lightning-tab label="Calculator" onclick={tabcalcHandler}>
+           
+        </lightning-tab>
+       
+    </lightning-tabset>
+    <template if:true={showSecond}>
+        <div> Hello All</div>
+     </template>
+
+    <template if:true={showAccTable}>
+        <c-accwith-datatable></c-accwith-datatable>
+     </template>
+
+     <template if:true={showCalc}>
+         <c-child-calculator></c-child-calculator>
+      </template>
+</template>
