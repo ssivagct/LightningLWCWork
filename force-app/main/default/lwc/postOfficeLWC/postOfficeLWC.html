@@ -1,0 +1,33 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" class="fixed"></lightning-spinner>
+    </template>
+    <lightning-card title='Search PostOffice'>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input label='Enter PostCode:' onchange={inputHandler} name='postCode'>
+                </lightning-input>
+                    <lightning-button label='Get Details' onclick={getDataFromSF} >
+
+                    </lightning-button>
+               
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    <template if:true={outputReady}>
+        <lightning-card title='Result PostOffice'>
+            <lightning-layout>
+                <lightning-layout-item>
+                 <ul class="slds-m-around_medium">
+                    <template for:each={outPut} for:item="outP">
+                        <li key={outP}>
+                            {outPut}
+                        </li>
+                    </template>
+                </ul>
+                   
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+        </template>
+</template>
